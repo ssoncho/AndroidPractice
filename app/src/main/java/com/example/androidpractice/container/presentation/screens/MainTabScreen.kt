@@ -10,7 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.example.androidpractice.photoList.presentation.screens.ListScreen
+import com.example.androidpractice.characterList.presentation.screens.ListScreen
 import com.example.androidpractice.profile.presentation.screens.ProfileScreen
 import com.example.androidpractice.ui.components.BottomBar
 import com.github.terrakok.modo.multiscreen.MultiScreen
