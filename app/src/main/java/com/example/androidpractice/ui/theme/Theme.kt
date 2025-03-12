@@ -9,7 +9,12 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import com.example.androidpractice.R
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -33,6 +38,10 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+val LocalDefaultImage = staticCompositionLocalOf<Int> {
+    error("No default image provided")
+}
+
 @Composable
 fun AndroidPracticeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -50,9 +59,13 @@ fun AndroidPracticeTheme(
         else -> LightColorScheme
     }
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
-    )
+    val defaultImage = if (darkTheme) R.drawable.dark_default_image else R.drawable.light_default_image
+
+    CompositionLocalProvider(LocalDefaultImage provides defaultImage) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = Typography,
+            content = content
+        )
+    }
 }

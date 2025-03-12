@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidPractice</string>
+
+    <string name="search_bar_title">Search character name</string>
 </resources>
