@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.example.androidpractice.characterList.presentation.screens.ListScreen
 import com.example.androidpractice.profile.presentation.screens.ProfileScreen
-import com.example.androidpractice.ui.components.BottomBar
+import com.example.androidpractice.ui.components.TabsAppBar
 import com.github.terrakok.modo.multiscreen.MultiScreen
 import com.github.terrakok.modo.multiscreen.MultiScreenNavModel
 import com.github.terrakok.modo.animation.SlideTransition
@@ -57,7 +57,7 @@ fun MainTabContent(
     Scaffold(
         modifier = modifier,
         bottomBar = {
-            BottomBar(onTabClick, selectedTabPos)
+            TabsAppBar(onTabClick, selectedTabPos)
         }
     ) { paddingValues ->
         paddingValues.content()

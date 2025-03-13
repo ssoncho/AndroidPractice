@@ -11,6 +11,7 @@ composeBom = "2024.04.01"
 modoCompose = "0.10.1"
 koinAndroidxCompose = "4.0.2"
 coilCompose = "3.0.0"
+constraintlayoutCompose = "1.1.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,6 +32,7 @@ koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", versi
 modo-compose = { module = "com.github.terrakok:modo-compose", version.ref = "modoCompose" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
 coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
+constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

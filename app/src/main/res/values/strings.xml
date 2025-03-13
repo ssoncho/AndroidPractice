@@ -2,4 +2,10 @@
     <string name="app_name">AndroidPractice</string>
 
     <string name="search_bar_title">Search character name</string>
+    <string name="details_top_bar_title">Character\'s details</string>
+    <string name="unknown">Unknown</string>
+    <string name="biography_title">Biographical facts</string>
+    <string name="magical_facts_title">Magical facts</string>
+    <string name="character_not_found">Character isn\'t found</string>
+    <string name="search_not_found">No results</string>
 </resources>
