@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
@@ -52,7 +53,7 @@ fun CharacterListItem(
                 style = MaterialTheme.typography.titleMedium
             )
             Text(
-                text = "Species: ${item.species ?: "Unknown"}",
+                text = "Species: ${item.species ?: stringResource(R.string.unknown)}",
                 style = MaterialTheme.typography.bodySmall
             )
         }
@@ -61,4 +62,4 @@ fun CharacterListItem(
 
 @Preview(showBackground = true)
 @Composable
-fun CharacterListItemPreview() = CharacterListItem(item = CharactersRepository().getList().first())
+private fun CharacterListItemPreview() = CharacterListItem(item = CharactersRepository().getList().first())

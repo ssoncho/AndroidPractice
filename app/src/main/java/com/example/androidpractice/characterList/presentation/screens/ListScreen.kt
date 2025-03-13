@@ -9,6 +9,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.example.androidpractice.R
 import com.example.androidpractice.characterList.presentation.state.CharactersListState
 import com.example.androidpractice.characterList.presentation.viewModel.ListViewModel
 import com.example.androidpractice.ui.components.CharacterListItem
@@ -39,7 +41,7 @@ class ListScreen(
             }
         ) {
             if (state.isEmpty) {
-                EmptyDataBox("No results")
+                EmptyDataBox(stringResource(R.string.search_not_found))
             }
 
             LazyColumn(Modifier.padding(it)) {

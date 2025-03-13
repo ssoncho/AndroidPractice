@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import com.example.androidpractice.container.presentation.screens.MainTabs
 
 @Composable
-fun BottomBar(onTabClick: (Int) -> Unit, selectedTabPos: Int) {
+fun TabsAppBar(onTabClick: (Int) -> Unit, selectedTabPos: Int) {
     BottomAppBar {
         for ((pos, tab) in MainTabs.entries.withIndex()) {
             IconButton(
