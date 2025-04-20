@@ -1,6 +1,6 @@
 package com.example.androidpractice.characterList.domain.entity
 
-class CharacterEntity(
+data class CharacterEntity(
     val slug: String,
     val aliasNames: List<String>,
     val animagus: String?,
