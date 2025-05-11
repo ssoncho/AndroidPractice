@@ -1,20 +1,18 @@
 package com.example.androidpractice.characterList.presentation.screens
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.example.androidpractice.R
-import com.example.androidpractice.characterList.presentation.state.CharactersListState
 import com.example.androidpractice.characterList.presentation.viewModel.ListViewModel
 import com.example.androidpractice.ui.components.CharacterListItem
-import com.example.androidpractice.ui.components.EmptyDataBox
+import com.example.androidpractice.ui.components.FullScreenLoading
+import com.example.androidpractice.ui.components.FullScreenMessage
 import com.example.androidpractice.ui.components.SearchBar
 import com.github.terrakok.modo.Screen
 import com.github.terrakok.modo.ScreenKey
@@ -40,8 +38,19 @@ class ListScreen(
                 SearchBar(state.query) { query -> viewModel.onQueryChanged(query) }
             }
         ) {
+            if (state.isLoading) {
+                FullScreenLoading()
+                return@Scaffold
+            }
+
+            state.error?.let {
+                FullScreenMessage(msg = it)
+                return@Scaffold
+            }
+
             if (state.isEmpty) {
-                EmptyDataBox(stringResource(R.string.search_not_found))
+                FullScreenMessage(stringResource(R.string.search_not_found))
+                return@Scaffold
             }
 
             LazyColumn(Modifier.padding(it)) {

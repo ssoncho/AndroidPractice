@@ -3,6 +3,6 @@ package com.example.androidpractice.characterList.domain.repository
 import com.example.androidpractice.characterList.domain.entity.CharacterEntity
 
 interface ICharactersRepository {
-    fun getList(q: String = ""): List<CharacterEntity>
-    fun getBySlug(slug: String): CharacterEntity?
+    suspend fun getList(q: String): List<CharacterEntity>
+    suspend fun getBySlug(slug: String): CharacterEntity?
 }

@@ -4,4 +4,6 @@ import com.example.androidpractice.characterList.domain.entity.CharacterEntity
 
 interface CharacterDetailsState {
     val character: CharacterEntity?
+    val isLoading: Boolean
+    val error: String?
 }
