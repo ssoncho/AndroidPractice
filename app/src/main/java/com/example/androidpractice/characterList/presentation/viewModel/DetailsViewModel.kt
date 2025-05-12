@@ -16,7 +16,7 @@ class DetailsViewModel(
     private val repository: ICharactersRepository,
     private val navigation: StackNavContainer,
     private val slug: String
-    ): ViewModel() {
+) : ViewModel() {
     private val mutableState = MutableDetailsState()
     val viewState = mutableState as CharacterDetailsState
 

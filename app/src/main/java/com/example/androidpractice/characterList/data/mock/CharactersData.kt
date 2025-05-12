@@ -94,7 +94,7 @@ object CharactersData {
             gender = "Female",
             house = "Slytherin",
             image = "https://static.wikia.nocookie.net/harrypotter/images/4/4f/Cedrella_Weasley.jpg",
-            maritalStatus = "Married or widowed",
+            maritalStatus = null,
             name = "Cedrella Weasley (née Black)",
             nationality = "British or Irish",
             patronus = null,

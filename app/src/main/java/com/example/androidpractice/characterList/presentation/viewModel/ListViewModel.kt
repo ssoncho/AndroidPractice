@@ -8,9 +8,9 @@ import androidx.lifecycle.viewModelScope
 import com.example.androidpractice.characterList.domain.entity.CharacterEntity
 import com.example.androidpractice.characterList.domain.repository.ICharactersRepository
 import com.example.androidpractice.characterList.presentation.screens.CharacterScreen
-import com.github.terrakok.modo.stack.StackNavContainer
 import com.example.androidpractice.characterList.presentation.state.CharactersListState
 import com.example.androidpractice.core.coroutinesUtils.launchLoadingAndError
+import com.github.terrakok.modo.stack.StackNavContainer
 import com.github.terrakok.modo.stack.forward
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,7 +22,7 @@ import java.time.Duration
 class ListViewModel(
     private val repository: ICharactersRepository,
     private val navigation: StackNavContainer
-): ViewModel() {
+) : ViewModel() {
     private val mutableState = MutableCharactersListState()
     val viewState = mutableState as CharactersListState
 
@@ -59,7 +59,7 @@ class ListViewModel(
         navigation.forward(CharacterScreen(characterSlug = slug))
     }
 
-    private class MutableCharactersListState: CharactersListState {
+    private class MutableCharactersListState : CharactersListState {
         override var items: List<CharacterEntity> by mutableStateOf(emptyList())
         override var query by mutableStateOf("")
         override val isEmpty get() = items.isEmpty()

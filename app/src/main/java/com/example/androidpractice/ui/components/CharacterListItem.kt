@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.example.androidpractice.R
 import com.example.androidpractice.characterList.data.mock.CharactersData
-import com.example.androidpractice.characterList.data.repository.CharactersRepository
 import com.example.androidpractice.characterList.domain.entity.CharacterEntity
 import com.example.androidpractice.ui.theme.LocalDefaultImage
 import com.example.androidpractice.ui.theme.Spacing
@@ -63,4 +62,5 @@ fun CharacterListItem(
 
 @Preview(showBackground = true)
 @Composable
-private fun CharacterListItemPreview() = CharacterListItem(item = CharactersData.characters.first())
+private fun CharacterListItemPreview() =
+    CharacterListItem(item = CharactersData.characters.first())

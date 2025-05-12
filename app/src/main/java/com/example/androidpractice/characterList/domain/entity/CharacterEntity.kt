@@ -14,5 +14,5 @@ data class CharacterEntity(
     val name: String,
     val nationality: String?,
     val patronus: String?,
-    val species: String?,
+    val species: String?
 )

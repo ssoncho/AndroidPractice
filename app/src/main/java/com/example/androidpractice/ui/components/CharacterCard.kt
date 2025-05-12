@@ -66,7 +66,7 @@ fun CharacterCard(
         Box(
             modifier = Modifier
                 .padding(top = Spacing.small)
-        ){
+        ) {
             Column {
                 OptionalText("Species", character.species)
                 OptionalText("Gender", character.gender)
@@ -97,4 +97,5 @@ fun CharacterCard(
 
 @Preview(showBackground = true)
 @Composable
-private fun CharacterCardPreview() = CharacterCard(character = CharactersData.characters.first())
+private fun CharacterCardPreview() =
+    CharacterCard(character = CharactersData.characters.first())

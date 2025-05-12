@@ -6,4 +6,5 @@ interface CharacterDetailsState {
     val character: CharacterEntity?
     val isLoading: Boolean
     val error: String?
+
 }
