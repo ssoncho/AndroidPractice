@@ -6,10 +6,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.example.androidpractice.R
-import com.example.androidpractice.characterList.presentation.state.CharacterDetailsState
 import com.example.androidpractice.characterList.presentation.viewModel.DetailsViewModel
 import com.example.androidpractice.ui.components.BackAppBar
 import com.example.androidpractice.ui.components.CharacterCard
+import com.example.androidpractice.ui.components.FullScreenLoading
+import com.example.androidpractice.ui.components.FullScreenMessage
 import com.github.terrakok.modo.Screen
 import com.github.terrakok.modo.ScreenKey
 import com.github.terrakok.modo.generateScreenKey
@@ -36,6 +37,16 @@ class CharacterScreen(
                     stringResource(R.string.details_top_bar_title)) { viewModel.back() }
             }
         ) { paddingValues ->
+            if (state.isLoading) {
+                FullScreenLoading()
+                return@Scaffold
+            }
+
+            state.error?.let {
+                FullScreenMessage(msg = it)
+                return@Scaffold
+            }
+
             CharacterCard(
                 modifier = Modifier.padding(paddingValues),
                 state.character
