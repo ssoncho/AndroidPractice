@@ -2,12 +2,9 @@ package com.example.androidpractice.ui.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -19,12 +16,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.example.androidpractice.R
-import com.example.androidpractice.characterList.data.repository.CharactersRepository
+import com.example.androidpractice.characterList.data.mock.CharactersData
 import com.example.androidpractice.characterList.domain.entity.CharacterEntity
 import com.example.androidpractice.ui.theme.LocalDefaultImage
 import com.example.androidpractice.ui.theme.Spacing
@@ -34,7 +30,7 @@ fun CharacterCard(
     modifier: Modifier = Modifier,
     character: CharacterEntity?
 ) {
-    character ?: run { return EmptyDataBox(stringResource(R.string.character_not_found)) }
+    character ?: run { return FullScreenMessage(stringResource(R.string.character_not_found)) }
 
     Column(
         modifier = modifier
@@ -70,7 +66,7 @@ fun CharacterCard(
         Box(
             modifier = Modifier
                 .padding(top = Spacing.small)
-        ){
+        ) {
             Column {
                 OptionalText("Species", character.species)
                 OptionalText("Gender", character.gender)
@@ -101,4 +97,5 @@ fun CharacterCard(
 
 @Preview(showBackground = true)
 @Composable
-private fun CharacterCardPreview() = CharacterCard(character = CharactersRepository().getList().first())
+private fun CharacterCardPreview() =
+    CharacterCard(character = CharactersData.characters.first())

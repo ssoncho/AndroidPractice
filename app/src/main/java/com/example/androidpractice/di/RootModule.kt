@@ -1,5 +1,6 @@
 package com.example.androidpractice.di
 
+import com.example.androidpractice.characterList.data.mapper.CharacterResponseToEntityMapper
 import com.example.androidpractice.characterList.data.repository.CharactersRepository
 import com.example.androidpractice.characterList.domain.repository.ICharactersRepository
 import com.example.androidpractice.characterList.presentation.viewModel.DetailsViewModel
@@ -8,7 +9,9 @@ import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val rootModule = module {
-    single<ICharactersRepository> { CharactersRepository() }
+    single<ICharactersRepository> { CharactersRepository(get(), get()) }
+
+    factory { CharacterResponseToEntityMapper() }
 
     viewModel { ListViewModel(get(), it.get()) }
     viewModel { DetailsViewModel(get(), it.get(), it.get()) }

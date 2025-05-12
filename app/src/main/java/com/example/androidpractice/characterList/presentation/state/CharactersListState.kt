@@ -6,4 +6,6 @@ interface CharactersListState {
     val items: List<CharacterEntity>
     val query: String
     val isEmpty: Boolean
+    val isLoading: Boolean
+    val error: String?
 }
