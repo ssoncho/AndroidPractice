@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("kotlin-parcelize")
+    id("com.google.devtools.ksp") version "2.0.0-1.0.23"
 }
 
 android {
@@ -58,6 +59,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.gson)
     implementation(libs.converter.gson)
+    implementation(libs.androidx.datastore.preferences)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -68,4 +70,9 @@ dependencies {
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chucker.no.op)
     debugImplementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
+    annotationProcessor(libs.room.compiler)
+    implementation(libs.room.ktx)
 }

@@ -15,6 +15,7 @@ import com.example.androidpractice.ui.theme.Spacing
 
 @Composable
 fun SearchBar(
+    modifier: Modifier = Modifier,
     query: String,
     onQueryChange: (String) -> Unit
 ) {
@@ -22,9 +23,7 @@ fun SearchBar(
         value = query,
         onValueChange = { onQueryChange(it) },
         label = { Text(stringResource(R.string.search_bar_title)) },
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(Spacing.small),
+        modifier = modifier,
         leadingIcon = { Icon(Icons.Rounded.Search, null) }
     )
 }

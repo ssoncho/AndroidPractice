@@ -10,6 +10,7 @@ interface CharacterApi {
     @GET("characters")
     suspend fun getCharacters(
         @Query("filter[name_cont]") search: String,
+        @Query("filter[house_eq_any]") houseType: String?,
         @Query("page[number]") page: Int = 1
     ) : CharactersSearchResponse
 
