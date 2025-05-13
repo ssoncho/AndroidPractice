@@ -53,6 +53,10 @@ fun CharacterListItem(
                 style = MaterialTheme.typography.titleMedium
             )
             Text(
+                text = "House: ${stringResource(item.house.stringRes)}",
+                style = MaterialTheme.typography.bodySmall
+            )
+            Text(
                 text = "Species: ${item.species ?: stringResource(R.string.unknown)}",
                 style = MaterialTheme.typography.bodySmall
             )

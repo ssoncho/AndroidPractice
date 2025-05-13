@@ -3,6 +3,7 @@ package com.example.androidpractice.characterList.data.mapper
 import com.example.androidpractice.characterList.data.model.CharacterResponse
 import com.example.androidpractice.characterList.data.model.CharactersSearchResponse
 import com.example.androidpractice.characterList.domain.entity.CharacterEntity
+import com.example.androidpractice.characterList.domain.entity.HouseType
 
 class CharacterResponseToEntityMapper {
     fun mapSearch(response: CharactersSearchResponse) =
@@ -16,7 +17,7 @@ class CharacterResponseToEntityMapper {
                     born = characterAttributes.born,
                     died = characterAttributes.died,
                     gender = characterAttributes.gender,
-                    house = characterAttributes.house,
+                    house = HouseType.getByValue(characterAttributes.house),
                     image = characterAttributes.image,
                     maritalStatus = characterAttributes.maritalStatus,
                     name = characterAttributes.name.orEmpty(),
@@ -36,7 +37,7 @@ class CharacterResponseToEntityMapper {
             born = characterAttributes?.born,
             died = characterAttributes?.died,
             gender = characterAttributes?.gender,
-            house = characterAttributes?.house,
+            house = HouseType.getByValue(characterAttributes?.house),
             image = characterAttributes?.image,
             maritalStatus = characterAttributes?.maritalStatus,
             name = characterAttributes?.name.orEmpty(),

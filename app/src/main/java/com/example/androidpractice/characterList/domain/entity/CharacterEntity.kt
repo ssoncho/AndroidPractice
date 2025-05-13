@@ -8,7 +8,7 @@ data class CharacterEntity(
     val born: String?,
     val died: String?,
     val gender: String?,
-    val house: String?,
+    val house: HouseType,
     val image: String?,
     val maritalStatus: String?,
     val name: String,

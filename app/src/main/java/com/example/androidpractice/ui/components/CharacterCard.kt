@@ -16,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
@@ -54,6 +56,21 @@ fun CharacterCard(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(top = Spacing.small)
+        )
+
+        Text(
+            text = stringResource(R.string.house_title),
+            style = MaterialTheme.typography.titleLarge,
+            modifier = Modifier
+                .padding(top = Spacing.medium)
+        )
+
+        Text(
+            text = stringResource(character.house.stringRes),
+            style = MaterialTheme.typography.bodyLarge,
+            fontStyle = FontStyle.Italic,
+            modifier = Modifier
+                .padding(top = Spacing.medium)
         )
 
         Text(
